@@ -20,10 +20,10 @@ def stop_watch():
             seconds = int(recorded_time % 60)
 
             time_string = f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-            print(f"recorded time: {time_string}")
+            print(f"\rrecorded time: {time_string}", end = "") #adde \r to prevent a wall of text in the terminal - Elvis
 
             sys.stdout.flush() #to update the terminal and empty the cpu to prevent overflow
-            time.sleep(0.1)
+            time.sleep(1)
     
     except KeyboardInterrupt:
         print("\n\nStopwatch stopped!")
@@ -37,13 +37,3 @@ def stop_watch():
         print(f"Final Time: {hours:02d}:{minutes:02d}:{seconds:02d}")
         print("====================================")
         
-
-
-# current_log = "01:00:00"
-# new_entry = "02:43:25"
-
-# total = time_tracker(new_entry,current_log)
-# print({total})
-
-if __name__ == "__main__":
-    stop_watch()
